@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre-mim" class="menu-link">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+
+        <img src="img/Minha foto.jpeg" alt="Minha Foto" class="foto-perfil">
+        <h1>Samara Ramos</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedora Web</p>
+
+    </main>
+
+
+    <section id="sobre-mim" class="sobre">
+        <h2 class="sobre-titulo">Sobre-Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Olá, eu sou a Samara Ramos, estudante de Ciência da Computação na Universidade Federal de Rondônia(UNIR). 
+                Atuo na área de programação, desenvolvimento web e aplicações modernas e funcionais.
+
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+
+                <img src="img/Projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto 1 – Visualizador de Algoritmos de Ordenação</h3>
+                    <p class="paragrafo-projetos"> Projeto interdisciplinar desenvolvido em parceria entre as
+                        disciplinas de Programação Orientada a Objetos (POO) e Computação Gráfica.
+                        A interface foi construída em Java, enquanto a equipe de Computação Gráfica desenvolveu a parte
+                        visual em C++.
+                        O sistema permite visualizar, em tempo real, a execução de algoritmos de ordenação, facilitando
+                        o aprendizado sobre o funcionamento de cada método.
+                        Atuei no desenvolvimento da interface, integração entre os módulos e organização da experiência
+                        do usuário.</p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="img/projeto2.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto 2 - Site para Cafeteria</h3>
+                    <p class="paragrafo-projetos">
+                        Descrição:
+
+                        Website responsivo para uma cafeteria fictícia, desenvolvido com HTML, CSS e JavaScript. O
+                        objetivo é criar uma interface moderna e agradável, aplicando conceitos de responsividade,
+                        animações, organização de conteúdo e boas práticas de desenvolvimento Front-end.
+                    </p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="img/projeto3.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto3</h3>
+                    <p class="paragrafo-projetos"> Descrição dp projeto3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contatos</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar Whatzaap</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+
+            event.preventDefault()
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5569993087963'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+            console.log(url)
+            window.open(url, '_blank')
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
